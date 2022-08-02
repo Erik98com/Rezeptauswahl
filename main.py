@@ -1,7 +1,7 @@
-'''
+"""
 Tasks1: Rezepte anpassen und suchen, Links aktualisieren
 Task2: Tag hinzufügen, um bestimmt Rezepte auszusuchen
-'''
+"""
 
 import random
 import webbrowser
@@ -13,7 +13,7 @@ import recipes as rc
 calculation = "Anzeige der Zutaten"
 # Rezepte von recipes.py holen als Objekte
 getRecipes = [rc.recipe1, rc.recipe2, rc.recipe3, rc.recipe4, rc.recipe5, rc.recipe6, rc.recipe7,
-              rc.recipe8, rc.recipe9, rc.recipe10, rc.recipe11]
+              rc.recipe8, rc.recipe9, rc.recipe10, rc.recipe11, rc.recipe12, rc.recipe13, rc.recipe14, rc.recipe15]
 
 
 def callback(selection):
@@ -38,6 +38,7 @@ def inputCheck(val1):
         val1 = 100
     return val1
 
+
 def selectionA():
     val1 = input1.get()
     val1 = inputCheck(val1)
@@ -47,7 +48,7 @@ def selectionA():
             loopRecipeNumber = (getattr(actLoopRecipe, "number"))  # holt Rezeptnummern aus Liste und vergleicht
             if loopRecipeNumber == val1:
                 listAllIngredients = actLoopRecipe.outputIngredients()
-                listAsString = "\n".join(listAllIngredients)# Liste als String
+                listAsString = "\n".join(listAllIngredients)  # Liste als String
                 output.config(text=listAsString)
 
 
